@@ -209,7 +209,7 @@
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            Our method uses an adapted Arc2Face diffusion model, augmented for diverse view generation through fine-tuning on PanoHead samples. For 3D generation, starting with a frontal image, we extract the Arc2Face embedding and initialize Gaussian Splats on each vertex of the FLAME head model, fitting the facial area to the mean facial texture. We then apply an SDS alternative, where each iteration combines the Arc2Face embedding with a CLIP-encoded view embedding to denoise the renderings and update the splats. Initially, only facial splats are optimized for a set number of iterations. Subsequently, all splats are refined with densification, pruning, and opacity resets disabled for the facial area. Dense mesh correspondence is maintained through targeted initialization, avoidance of the standard 3DGS modifications in the facial region, and mesh regularizers adhering to the underlying template. Therefore, our method enables straightforward avatar expressions via blendshapes and shows potential for expression refinement after blendshape application using the same framework with minimal steps.
           </p>       
         </div>
         <figure class="image" style="margin-top: 1rem;">
