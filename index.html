@@ -145,21 +145,27 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
 
-      <!-- TL;DR Section -->
-      <h2 class="subtitle has-text-centered">TL;DR</h2>
-      <p class="has-text-centered">
-        We introduce a large dataset of high-resolution facial images with consistent ID and 
-        intra-class variability, and an ID-conditioned face model trained on it, which:
-      </p>
-      <ul style="text-align: left; margin: 1rem auto; max-width: 600px;">
-        <li>🔥 Generates high-quality images of any subject given only its ArcFace embedding, within a few seconds.</li>
-        <li>🔥 Offers superior ID similarity compared to existing text-based models.</li>
-        <li>🔥 Is built on top of Stable Diffusion and can be extended to different input modalities, e.g., pose/expression.</li>
-      </ul>
+      <!-- TL;DR Heading -->
+      <!-- Use 'title is-4' or 'subtitle is-4' to match the rest of your site -->
+      <h2 class="title is-4">TL;DR</h2>
 
-      <!-- Example Image -->
+      <!-- Main text, justified to fill the line -->
+      <div class="content is-size-5" style="text-align: justify;">
+        <p>
+          We introduce a large dataset of high-resolution facial images with consistent ID 
+          and intra-class variability, and an ID-conditioned face model trained on it, which:
+        </p>
+
+        <ul>
+          <li>🔥 Generates high-quality images of any subject given only its ArcFace embedding, within a few seconds.</li>
+          <li>🔥 Offers superior ID similarity compared to existing text-based models.</li>
+          <li>🔥 Builds on top of Stable Diffusion, extendable to various input modalities (e.g. pose, expression).</li>
+        </ul>
+      </div>
+
+      <!-- Image below -->
       <figure class="image" style="margin-top: 1rem;">
-        <img src="./static/images/teaser.png" alt="Arc2Face Teaser">
+        <img src="./static/images/arc2face_teaser.jpg" alt="Arc2Face Teaser">
       </figure>
 
     </div>
