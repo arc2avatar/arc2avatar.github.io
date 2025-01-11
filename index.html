@@ -143,25 +143,20 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="text-align: justify;">
 
-      <!-- TL;DR Heading -->
-      <!-- Use 'title is-4' or 'subtitle is-4' to match the rest of your site -->
-      <h2 class="title is-4">TL;DR</h2>
+      <!-- TL;DR line -->
+      <p class="is-size-5">
+        <strong>TL;DR:</strong> We introduce a large dataset of high-resolution facial images with 
+        consistent ID and intra-class variability, and an ID-conditioned face model trained on it, which:
+      </p>
 
-      <!-- Main text, justified to fill the line -->
-      <div class="content is-size-5" style="text-align: justify;">
-        <p>
-          We introduce a large dataset of high-resolution facial images with consistent ID 
-          and intra-class variability, and an ID-conditioned face model trained on it, which:
-        </p>
-
-        <ul>
-          <li>🔥 Generates high-quality images of any subject given only its ArcFace embedding, within a few seconds.</li>
-          <li>🔥 Offers superior ID similarity compared to existing text-based models.</li>
-          <li>🔥 Builds on top of Stable Diffusion, extendable to various input modalities (e.g. pose, expression).</li>
-        </ul>
-      </div>
+      <!-- Fire "dots" -->
+      <p class="is-size-5" style="margin-left: 1.5rem;">
+        🔥 Generates high-quality images of any subject given only its ArcFace embedding, within a few seconds.<br/>
+        🔥 Offers superior ID similarity compared to existing text-based models.<br/>
+        🔥 Builds on top of Stable Diffusion, extendable to various input modalities (e.g., pose/expression).
+      </p>
 
       <!-- Image below -->
       <figure class="image" style="margin-top: 1rem;">
