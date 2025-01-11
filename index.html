@@ -146,7 +146,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/overview.mp4" type="video/mp4">
+        <source src="./static/videos/overview_speed.mp4" type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">Nerfies</span> turns selfie videos from your phone into free-viewpoint
@@ -155,19 +155,6 @@
     </div>
   </div>
 </section>
-
-
-const video = document.getElementById('teaser');
-
-video.addEventListener('loadedmetadata', () => {
-  video.playbackRate = 3.0;
-});
-
-video.addEventListener('play', () => {
-  // Sometimes setting it here works better in iOS Safari:
-  video.playbackRate = 3.0;
-});
-
 
 <section class="hero is-light is-small">
   <div class="hero-body">
