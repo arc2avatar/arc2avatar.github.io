@@ -145,7 +145,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
+      <video id="teaser" autoplay muted loop playsinline height="100%" onloadedmetadata="this.playbackRate = 3.0">
         <source src="./static/videos/overview.mp4" type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -155,14 +155,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('teaser');
-    video.playbackRate = 3.0; // 3× normal speed
-  });
-</script>
-
 
 <section class="hero is-light is-small">
   <div class="hero-body">
