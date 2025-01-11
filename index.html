@@ -156,12 +156,18 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('teaser');
-    video.playbackRate = 3.0; // 3× normal speed
-  });
-</script>
+
+const video = document.getElementById('teaser');
+
+video.addEventListener('loadedmetadata', () => {
+  video.playbackRate = 3.0;
+});
+
+video.addEventListener('play', () => {
+  // Sometimes setting it here works better in iOS Safari:
+  video.playbackRate = 3.0;
+});
+
 
 <section class="hero is-light is-small">
   <div class="hero-body">
