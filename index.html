@@ -234,161 +234,138 @@
             <source src="./static/videos/annataylorjoy.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 2 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/austinbutler.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 3 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/bengio.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 4 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/beyonce.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 5 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/bg.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 6 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/cillian.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 7 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/dakaridis.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 8 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/dicaprio.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 9 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/hemsworth.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 10 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/indian.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 11 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/ioannidis.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 12 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/jackman.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 13 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/laskaraki.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 14 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/mitsos.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 15 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/mpofiliou.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 16 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/musk.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 17 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/nikopolidis.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 18 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/papakaliatis.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 19 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/phoenix.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 20 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/terlegas.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 21 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/terzis.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 22 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/trump.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 23 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
             <source src="./static/videos/vissi.mp4" type="video/mp4">
           </video>
         </div>
-
         <!-- 24 -->
         <div class="column is-2">
           <video class="sync-video" muted loop playsinline height="100%">
@@ -400,14 +377,26 @@
   </div>
 </section>
 
-<!-- Small script to ensure all videos start simultaneously -->
 <script>
+  // We'll wait until each video can play through, then start them all at once.
   document.addEventListener('DOMContentLoaded', () => {
-    const videos = document.querySelectorAll('.sync-video');
+    const videos = Array.from(document.querySelectorAll('.sync-video'));
+    let loadedCount = 0;
+
     videos.forEach(video => {
-      // Reset the playback position and then play
-      video.currentTime = 0;
-      video.play();
+      // Listen for canplaythrough (fully buffered enough to play)
+      video.addEventListener('canplaythrough', () => {
+        loadedCount++;
+        // If all videos can play, reset time to 0 and then play them all
+        if (loadedCount === videos.length) {
+          videos.forEach(v => {
+            v.currentTime = 0;
+            v.play().catch(e => console.warn(e));
+          });
+        }
+      });
+      // Explicitly begin loading
+      video.load();
     });
   });
 </script>
