@@ -201,206 +201,123 @@
 -->
   
 <section class="hero teaser">
-  <div class="container is-max-desktop>
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Overview</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            Our method uses an adapted Arc2Face diffusion model, augmented for diverse view generation through fine-tuning on PanoHead samples. For 3D generation, starting with a frontal image, we extract the Arc2Face embedding and initialize Gaussian Splats on each vertex of the FLAME head model, fitting the facial area to the mean facial texture. We then apply an SDS alternative, where each iteration combines the Arc2Face embedding with a CLIP-encoded view embedding to denoise the renderings and update the splats. Initially, only facial splats are optimized for a set number of iterations. Subsequently, all splats are refined with densification, pruning, and opacity resets disabled for the facial area. Dense mesh correspondence is maintained through targeted initialization, avoidance of the standard 3DGS modifications in the facial region, and mesh regularizers adhering to the underlying template. Therefore, our method enables straightforward avatar expressions via blendshapes and shows potential for expression refinement after blendshape application using the same framework with minimal steps.
-          </p>       
-        </div>
-        <figure class="image" style="margin-top: 1rem;">
-          <img src="./static/images/method.png" alt="Arc2Avatar Method">
-        </figure> 
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
-
-<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">360° Rendering</h2>
 
-      <div class="columns is-multiline is-mobile">
-        <!-- 1 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/annataylorjoy.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 2 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/austinbutler.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 3 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/bengio.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 4 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/beyonce.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 5 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/bg.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 6 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/cillian.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 7 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/dakaridis.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 8 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/dicaprio.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 9 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/hemsworth.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 10 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/indian.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 11 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/ioannidis.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 12 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/jackman.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 13 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/laskaraki.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 14 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/mitsos.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 15 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/mpofiliou.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 16 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/musk.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 17 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/nikopolidis.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 18 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/papakaliatis.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 19 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/phoenix.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 20 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/terlegas.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 21 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/terzis.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 22 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/trump.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 23 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/vissi.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 24 -->
-        <div class="column is-2">
-          <video class="sync-video" muted loop playsinline height="100%">
-            <source src="./static/videos/zuck.mp4" type="video/mp4">
-          </video>
-        </div>
+      <div class="columns is-multiline is-mobile" id="video-grid">
+        <!-- 30 videos will be inserted here dynamically -->
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // We'll wait until each video can play through, then start them all at once.
-  document.addEventListener('DOMContentLoaded', () => {
-    const videos = Array.from(document.querySelectorAll('.sync-video'));
-    let loadedCount = 0;
+  // List all 30 .mp4 paths in ./static/videos/
+  const videoPaths = [
+    // 24 from "kept renders"
+    "./static/videos/annataylorjoy.mp4",
+    "./static/videos/austinbutler.mp4",
+    "./static/videos/bengio.mp4",
+    "./static/videos/beyonce.mp4",
+    "./static/videos/bg.mp4",
+    "./static/videos/cillian.mp4",
+    "./static/videos/dakaridis.mp4",
+    "./static/videos/dicaprio.mp4",
+    "./static/videos/hemsworth.mp4",
+    "./static/videos/indian.mp4",
+    "./static/videos/ioannidis.mp4",
+    "./static/videos/jackman.mp4",
+    "./static/videos/laskaraki.mp4",
+    "./static/videos/mitsos.mp4",
+    "./static/videos/mpofiliou.mp4",
+    "./static/videos/musk.mp4",
+    "./static/videos/nikopolidis.mp4",
+    "./static/videos/papakaliatis.mp4",
+    "./static/videos/phoenix.mp4",
+    "./static/videos/terlegas.mp4",
+    "./static/videos/terzis.mp4",
+    "./static/videos/trump.mp4",
+    "./static/videos/vissi.mp4",
+    "./static/videos/zuck.mp4",
 
-    videos.forEach(video => {
-      // Listen for canplaythrough (fully buffered enough to play)
+    // 6 from "Kepttrenders"
+    "./static/videos/ataman.mp4",
+    "./static/videos/bartzokas.mp4",
+    "./static/videos/chalamet.mp4",
+    "./static/videos/galan.mp4",
+    "./static/videos/lad.mp4",
+    "./static/videos/ruffalo.mp4"
+  ];
+
+  // Fisher-Yates shuffle
+  function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] =
+        [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
+
+  // Shuffle the array so videos appear in random order
+  shuffle(videoPaths);
+
+  // We'll wait for canplaythrough on each video before starting them all
+  document.addEventListener('DOMContentLoaded', () => {
+    const gridContainer = document.getElementById('video-grid');
+    const videos = [];     // We'll store references to the created <video> elements
+    let loadedCount = 0;   // How many have fired canplaythrough so far?
+
+    // Create 30 <video> elements dynamically
+    videoPaths.forEach(path => {
+      // Create a Bulma column for each video (1/5 width => 5 columns per row)
+      const column = document.createElement('div');
+      column.className = 'column is-one-fifth';
+
+      // Create the <video> element with your "sync-video" class
+      const video = document.createElement('video');
+      video.className = 'sync-video';
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      // We'll call .play() later, once they're all ready
+
+      // Make it fill the column width. You can also use height="100%" if you prefer.
+      video.style.width = '100%';
+
+      // Add the source
+      const source = document.createElement('source');
+      source.src = path;
+      source.type = 'video/mp4';
+      video.appendChild(source);
+
+      // Listen for canplaythrough to see when it's ready
       video.addEventListener('canplaythrough', () => {
         loadedCount++;
-        // If all videos can play, reset time to 0 and then play them all
-        if (loadedCount === videos.length) {
+        // Once all videos can play, reset times and play them simultaneously
+        if (loadedCount === videoPaths.length) {
           videos.forEach(v => {
             v.currentTime = 0;
             v.play().catch(e => console.warn(e));
           });
         }
       });
-      // Explicitly begin loading
+
+      // Force the browser to begin loading immediately
       video.load();
+
+      // Append the <video> into the column, then the column into the grid
+      column.appendChild(video);
+      gridContainer.appendChild(column);
+
+      // Keep a reference so we can call .play() later
+      videos.push(video);
     });
   });
 </script>
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
